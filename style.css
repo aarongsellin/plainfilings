@@ -1,22 +1,23 @@
 /* =============================================================
    PLAINFILINGS — style.css
-   IBM Plex Mono · Red #E5193A · Blue #0052FF · Black #111111
-   No gradients. Sharp edges. Terminal aesthetic.
+   Inter · Burgundy #7A1030 · Gold #B8892A · Off-white #F8F4EE
+   No gradients. Premium institutional aesthetic.
    ============================================================= */
 
 /* --- TOKENS ---------------------------------------------------*/
 :root {
-  --red: #e5193a;
-  --blue: #0052ff;
-  --black: #111111;
-  --white: #ffffff;
-  --light: #f5f5f5;
-  --mid-gray: #cccccc;
-  --border: #e2e2e2;
-  --muted: #666666;
-  --font: "IBM Plex Mono", "Courier New", monospace;
+  --red: #b8892a; /* gold — accents, tags, step numbers          */
+  --blue: #7a1030; /* burgundy — CTAs, highlights, featured border */
+  --black: #1c0a0f; /* warm near-black ink                          */
+  --white: #ffffff; /* pure white — cards, text on dark             */
+  --bg: #f8f4ee; /* off-white — page & nav background            */
+  --light: #efe8dc; /* warm off-white — section backgrounds         */
+  --mid-gray: #c4b9ad; /* warm mid-gray                                */
+  --border: #e2d8ce; /* warm border                                  */
+  --muted: #7a6860; /* warm muted text                              */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --max-w: 1140px;
-  --radius: 2px;
+  --radius: 4px;
   --trans: 150ms ease;
 }
 
@@ -35,7 +36,7 @@ html {
 
 body {
   font-family: var(--font);
-  background: var(--white);
+  background: var(--bg);
   color: var(--black);
   font-size: 16px;
   line-height: 1.6;
@@ -94,7 +95,7 @@ ul {
 }
 
 .section-tag--light {
-  color: #888;
+  color: #b09080;
 }
 
 /* --- SECTION TITLE --------------------------------------------*/
@@ -135,8 +136,8 @@ ul {
 }
 .btn--primary:hover,
 .btn--primary:focus-visible {
-  background: #0040cc;
-  border-color: #0040cc;
+  background: #5c0a23;
+  border-color: #5c0a23;
 }
 
 .btn--outline {
@@ -161,7 +162,7 @@ ul {
   color: var(--blue);
 }
 
-/* Final CTA red button */
+/* Final CTA gold button */
 .btn--cta {
   background: var(--red);
   color: var(--white);
@@ -169,8 +170,8 @@ ul {
 }
 .btn--cta:hover,
 .btn--cta:focus-visible {
-  background: #c8112f;
-  border-color: #c8112f;
+  background: #9a6b1a;
+  border-color: #9a6b1a;
 }
 
 .btn--full {
@@ -209,7 +210,7 @@ ul {
   height: 48px;
   min-width: 48px;
   border-radius: 50%;
-  background: #e8e8e8;
+  background: #e5ddd4;
   border: 2px dashed var(--mid-gray);
   display: flex;
   align-items: center;
@@ -224,11 +225,26 @@ ul {
 /* =============================================================
    NAV
    ============================================================= */
-.nav {
+/* --- CONSTRUCTION BANNER -------------------------------------*/
+.construction-banner {
   position: sticky;
   top: 0;
+  z-index: 200;
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 10px 16px;
+  border-bottom: 2px solid var(--red);
+}
+
+.nav {
+  position: sticky;
+  top: 34px;
   z-index: 100;
-  background: var(--white);
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -297,7 +313,7 @@ ul {
 
 .hero__subline {
   font-size: 17px;
-  color: #555;
+  color: var(--muted);
   line-height: 1.72;
   max-width: 460px;
   margin-bottom: 38px;
@@ -373,7 +389,7 @@ ul {
 
 .pain__body {
   font-size: 18px;
-  color: #aaaaaa;
+  color: #9a8a85;
   line-height: 1.78;
 }
 
@@ -382,13 +398,13 @@ ul {
    ============================================================= */
 .steps {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 0;
 }
 
 .step {
   flex: 1;
-  padding: 32px 28px 32px;
+  padding: 32px 28px;
   border: 2px solid var(--border);
   border-radius: var(--radius);
   transition: border-color var(--trans);
@@ -403,8 +419,6 @@ ul {
   height: 2px;
   background: var(--mid-gray);
   align-self: center;
-  position: relative;
-  top: -22px;
 }
 
 .step__number {
@@ -455,9 +469,17 @@ ul {
 }
 
 .feature-card__icon {
-  font-size: 26px;
-  margin-bottom: 16px;
-  line-height: 1;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+  color: var(--red);
+}
+
+.feature-card__icon svg {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
 .feature-card__title {
@@ -635,7 +657,7 @@ ul {
 }
 
 .pricing-card__features li.disabled {
-  color: #bbbbbb;
+  color: var(--mid-gray);
 }
 
 .check {
@@ -732,7 +754,7 @@ ul {
 
 .final-cta__sub {
   font-size: 16px;
-  color: #888;
+  color: #9a8a85;
   margin-bottom: 36px;
   line-height: 1.6;
 }
@@ -742,7 +764,7 @@ ul {
    ============================================================= */
 .footer {
   background: var(--black);
-  border-top: 1px solid #1e1e1e;
+  border-top: 1px solid #2a0a14;
   padding: 44px 0;
 }
 
@@ -767,7 +789,7 @@ ul {
 
 .footer__nav a {
   font-size: 13px;
-  color: #666;
+  color: #9a8078;
   transition: color var(--trans);
 }
 .footer__nav a:hover {
@@ -776,8 +798,16 @@ ul {
 
 .footer__copy {
   font-size: 12px;
-  color: #444;
+  color: #5a3a42;
 }
+
+.footer__credit {
+  color: #9A8078;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--trans);
+}
+.footer__credit:hover { color: var(--white); }
 
 /* =============================================================
    RESPONSIVE — TABLET (≤960px)

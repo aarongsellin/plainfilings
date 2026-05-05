@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plainfilings — SEC Filings, Decoded</title>
+    <title>plainfilings: Stock Filings, Decoded</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- CONSTRUCTION BANNER -->
+    <div class="construction-banner">
+      This page is under construction and not in production yet.
+    </div>
+
     <!-- NAV -->
     <nav class="nav">
       <div class="container nav__inner">
@@ -34,14 +39,14 @@
     <section class="hero section">
       <div class="container hero__inner">
         <div class="hero__text">
-          <div class="hero__eyebrow">SEC Filing Normalizer</div>
+          <div class="hero__eyebrow">Stock Filing Normalizer</div>
           <h1 class="hero__headline">
-            SEC Filings.<br /><span class="text-blue">Decoded.</span>
+            Stock Filings.<br /><span class="text-blue">Decoded.</span>
           </h1>
           <p class="hero__subline">
-            plainfilings turns any SEC filing&mdash;10-Ks, 8-Ks, proxies, S-1s
-            and more&mdash;into plain-English summaries you can actually act on.
-            From EDGAR release to summary in
+            plainfilings reads any stock filing (annual reports, quarterly
+            filings, prospectuses and more) and gives you a plain-English
+            summary you can act on. From filing release to summary in
             <strong>2&ndash;3 seconds</strong>.
           </p>
           <div class="hero__ctas">
@@ -67,18 +72,20 @@
     <section class="social-proof">
       <div class="container social-proof__inner">
         <div class="stat">
-          <span class="stat__number">50,000+</span>
-          <span class="stat__label">filings summarized</span>
+          <span class="stat__number">2&ndash;3s</span>
+          <span class="stat__label">from filing release to summary</span>
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__number">3,200+</span>
-          <span class="stat__label">tickers covered</span>
+          <span class="stat__number">US + Nordic</span>
+          <span class="stat__label">markets covered</span>
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__number">2,400+</span>
-          <span class="stat__label">investors using plainfilings</span>
+          <span class="stat__number">Any type</span>
+          <span class="stat__label"
+            >annual, quarterly, material events and more</span
+          >
         </div>
       </div>
     </section>
@@ -90,10 +97,11 @@
       <div class="container pain__inner">
         <div class="section-tag section-tag--light">The Problem</div>
         <h2 class="pain__headline">
-          Reading SEC filings<br />is <span class="text-red">broken.</span>
+          Reading stock filings<br />is
+          <span class="text-red">hard and time consuming.</span>
         </h2>
         <p class="pain__body">
-          A single 10-K can run 200+ pages of circular legal language written by
+          A filing can run 200+ pages of circular legal language written by
           lawyers. By the time you've decoded it, the market has already moved.
           You deserve better than that.
         </p>
@@ -106,26 +114,28 @@
     <section id="how-it-works" class="how section">
       <div class="container">
         <div class="section-tag">How it works</div>
-        <h2 class="section-title">Three steps to clarity.</h2>
+        <h2 class="section-title">How it works.</h2>
         <div class="steps">
           <div class="step">
             <span class="step__number">01</span>
             <h3 class="step__title">Search a ticker</h3>
             <p class="step__desc">
-              Enter any US ticker symbol. plainfilings pulls every filing type
-              directly from SEC EDGAR&mdash;covering all US-listed stocks.
+              Enter any ticker symbol. plainfilings pulls every filing type
+              directly from the exchange: US markets via SEC EDGAR, Nordic
+              markets via Nasdaq Stockholm, Copenhagen, Helsinki and Oslo
+              B&oslash;rs.
             </p>
           </div>
           <div class="step__connector"></div>
           <div class="step">
             <span class="step__number">02</span>
-            <h3 class="step__title">We do the hard part</h3>
+            <h3 class="step__title">We read it for you</h3>
             <p class="step__desc">
-              Our model distills the entire filing&mdash;flagging risks, key
-              numbers and material changes that actually matter. We run
-              inference on our own hardware, so summaries are ready in
-              <strong>2&ndash;3 seconds</strong> from the moment a filing hits
-              EDGAR.
+              Our model reads the entire filing and picks out risks, key numbers
+              and material changes. We run on our own hardware, so summaries are
+              ready in
+              <strong>2&ndash;3 seconds</strong> from the moment a filing is
+              published.
             </p>
           </div>
           <div class="step__connector"></div>
@@ -147,10 +157,14 @@
     <section class="features section section--light">
       <div class="container">
         <div class="section-tag">Features &amp; Benefits</div>
-        <h2 class="section-title">Built for investors<br />who move fast.</h2>
+        <h2 class="section-title">What you get.</h2>
         <div class="features__grid">
           <div class="feature-card">
-            <div class="feature-card__icon">&#9889;</div>
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </div>
             <h3 class="feature-card__title">Stop wasting hours on legalese</h3>
             <p class="feature-card__desc">
               What used to take 3 hours now takes 3 minutes. plainfilings does
@@ -159,18 +173,26 @@
           </div>
 
           <div class="feature-card">
-            <div class="feature-card__icon">&#128269;</div>
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 15.803a7.5 7.5 0 0 0 10.607 0z" />
+              </svg>
+            </div>
             <h3 class="feature-card__title">
               Never miss a material disclosure
             </h3>
             <p class="feature-card__desc">
-              Key risks, revenue changes and forward-looking statements are
-              surfaced automatically&mdash;nothing buried.
+              Key risks, revenue changes and material disclosures are pulled out
+              and listed clearly. Nothing gets buried.
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-card__icon">&#128203;</div>
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75z" />
+              </svg>
+            </div>
             <h3 class="feature-card__title">Track the filings that matter</h3>
             <p class="feature-card__desc">
               Pro watchlists let you monitor multiple tickers. New filing drops?
@@ -180,19 +202,27 @@
           </div>
 
           <div class="feature-card">
-            <div class="feature-card__icon">&#128276;</div>
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+              </svg>
+            </div>
             <h3 class="feature-card__title">
               2&ndash;3 second summaries, always
             </h3>
             <p class="feature-card__desc">
-              We run our own models on our own hardware&mdash;no third-party API
-              queues. A filing lands on EDGAR and your summary is ready in under
+              We run our own models on our own hardware. No third-party API
+              queues. A filing is published and your summary is ready in under
               three seconds. <span class="badge-pro">Pro</span>
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-card__icon">&#9881;</div>
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+              </svg>
+            </div>
             <h3 class="feature-card__title">Pipe summaries into your stack</h3>
             <p class="feature-card__desc">
               REST API, webhooks and WebSocket streams. Get summaries straight
@@ -201,11 +231,15 @@
           </div>
 
           <div class="feature-card">
-            <div class="feature-card__icon">&#128196;</div>
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z" />
+              </svg>
+            </div>
             <h3 class="feature-card__title">Every filing type, covered</h3>
             <p class="feature-card__desc">
-              10-Ks, 10-Qs, 8-Ks, S-1s, DEF&nbsp;14As and more&mdash;if
-              it&rsquo;s on SEC EDGAR, plainfilings summarizes it.
+              Annual reports, quarterly filings, prospectuses, proxy statements
+              and more. If it&rsquo;s been filed, plainfilings summarizes it.
             </p>
           </div>
         </div>
@@ -218,7 +252,7 @@
     <section class="testimonials section">
       <div class="container">
         <div class="section-tag">Testimonials</div>
-        <h2 class="section-title">Real wins from real users.</h2>
+        <h2 class="section-title">What users say.</h2>
         <div class="testimonials__grid">
           <div class="testimonial-card">
             <blockquote class="testimonial-card__quote">
@@ -278,9 +312,7 @@
     <section id="pricing" class="pricing section section--light">
       <div class="container">
         <div class="section-tag">Pricing</div>
-        <h2 class="section-title">
-          Start free.<br />Scale when you&rsquo;re ready.
-        </h2>
+        <h2 class="section-title">Pricing.</h2>
         <div class="pricing__grid">
           <div class="pricing-card">
             <div class="pricing-card__tier">Free</div>
@@ -296,7 +328,7 @@
                 <span class="check">&#10003;</span> Filing search by ticker
               </li>
               <li>
-                <span class="check">&#10003;</span> All SEC EDGAR filing types
+                <span class="check">&#10003;</span> All supported filing types
               </li>
               <li class="disabled"><span>&#10005;</span> Watchlists</li>
               <li class="disabled">
@@ -323,7 +355,7 @@
                 <span class="check">&#10003;</span> Filing search by ticker
               </li>
               <li>
-                <span class="check">&#10003;</span> All SEC EDGAR filing types
+                <span class="check">&#10003;</span> All supported filing types
               </li>
               <li><span class="check">&#10003;</span> Watchlists</li>
               <li>
@@ -349,7 +381,7 @@
                 <span class="check">&#10003;</span> Filing search by ticker
               </li>
               <li>
-                <span class="check">&#10003;</span> All SEC EDGAR filing types
+                <span class="check">&#10003;</span> All supported filing types
               </li>
               <li><span class="check">&#10003;</span> Watchlists</li>
               <li>
@@ -375,7 +407,7 @@
     <section id="faq" class="faq section">
       <div class="container faq__inner">
         <div class="section-tag">FAQ</div>
-        <h2 class="section-title">Common questions.</h2>
+        <h2 class="section-title">Questions.</h2>
         <div class="faq__list">
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
@@ -384,10 +416,10 @@
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                plainfilings uses a model specialized on thousands of SEC
-                filings. Summaries surface key risks, revenue figures, guidance
-                and material events. Every claim links back to the source text
-                so you can verify in one click.
+                Our model is trained on filings from multiple markets. Summaries
+                pull out key risks, revenue figures, guidance and material
+                events. Every point links back to the source text so you can
+                check it in one click.
               </p>
             </div>
           </div>
@@ -399,14 +431,13 @@
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                We support all filing types available on SEC
-                EDGAR&mdash;including 10-K (annual), 10-Q (quarterly), 8-K
-                (material event), S-1 (IPO prospectus), DEF&nbsp;14A (proxy
-                statement) and more. Coverage is currently limited to US-listed
-                stocks.
-                <strong>Nordic stocks are on the roadmap</strong>&mdash;we plan
-                to add support for exchanges including Nasdaq Stockholm, Oslo
-                Børs and Nasdaq Helsinki.
+                We support all major filing types across our covered markets:
+                annual reports, quarterly filings, material event disclosures,
+                IPO prospectuses, proxy statements and more. Current coverage
+                includes <strong>US markets (SEC EDGAR)</strong> and
+                <strong>Nordic markets</strong> (Nasdaq Stockholm, Nasdaq
+                Copenhagen, Nasdaq Helsinki and Oslo B&oslash;rs). More
+                exchanges are on the roadmap.
               </p>
             </div>
           </div>
@@ -462,11 +493,9 @@
     <section class="final-cta section section--dark">
       <div class="container final-cta__inner">
         <h2 class="final-cta__headline">
-          Your edge is one<br />summary <span class="text-red">away.</span>
+          Read less.<br />Know <span class="text-red">more.</span>
         </h2>
-        <p class="final-cta__sub">
-          Join thousands of investors who stopped reading filings the hard way.
-        </p>
+        <p class="final-cta__sub">Stop reading filings by hand.</p>
         <a href="#pricing" class="btn btn--cta btn--lg"
           >Start for free &rarr;</a
         >
@@ -486,6 +515,8 @@
         </nav>
         <div class="footer__copy">
           &copy; 2026 plainfilings. All rights reserved.
+          &nbsp;&middot;&nbsp; Made in Sweden
+          &nbsp;&middot;&nbsp; <a href="https://www.aarongsellin.dev" target="_blank" rel="noopener" class="footer__credit">aarongsellin.dev</a>
         </div>
       </div>
     </footer>
