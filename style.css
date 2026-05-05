@@ -802,12 +802,14 @@ ul {
 }
 
 .footer__credit {
-  color: #9A8078;
+  color: #9a8078;
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color var(--trans);
 }
-.footer__credit:hover { color: var(--white); }
+.footer__credit:hover {
+  color: var(--white);
+}
 
 /* =============================================================
    RESPONSIVE — TABLET (≤960px)
