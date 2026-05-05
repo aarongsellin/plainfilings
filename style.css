@@ -575,7 +575,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .pricing-card {
@@ -584,18 +584,21 @@ ul {
   border-radius: var(--radius);
   padding: 36px 28px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card--featured {
   border: 3px solid var(--blue);
-  /* Shift up slightly to visually anchor it */
-  margin-top: -8px;
-  padding-top: 44px;
-  padding-bottom: 44px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  padding-top: 52px;
+  padding-bottom: 52px;
 }
 
 .pricing-card__badge {
   display: inline-block;
+  align-self: flex-start;
   background: var(--blue);
   color: var(--white);
   font-size: 10px;
@@ -647,17 +650,29 @@ ul {
   gap: 11px;
   font-size: 13px;
   margin-bottom: 28px;
+  flex: 1;
 }
 
 .pricing-card__features li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   line-height: 1.5;
 }
 
 .pricing-card__features li.disabled {
   color: var(--mid-gray);
+}
+
+.pricing-card__includes {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
 }
 
 .check {
@@ -671,6 +686,62 @@ ul {
   font-size: 13px;
   color: var(--muted);
   margin-top: 32px;
+}
+
+/* Tooltips */
+.tip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: default;
+  vertical-align: middle;
+  margin-left: 4px;
+  line-height: 1;
+}
+
+.tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--black);
+  color: #f0e8e0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 220px;
+  white-space: normal;
+  text-align: left;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.tip::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--black);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.tip:hover::after,
+.tip:hover::before {
+  opacity: 1;
 }
 
 /* =============================================================
