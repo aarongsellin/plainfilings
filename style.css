@@ -610,7 +610,25 @@ ul {
   margin-bottom: 18px;
 }
 
-.pricing-card__tier {
+.pricing-card__badge--soon {
+  background: var(--muted);
+}
+
+.pricing-card__badge--inline {
+  font-size: 9px;
+  padding: 2px 7px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.coming-soon-label {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--muted);
+  margin-left: 2px;
+}
+
+
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
