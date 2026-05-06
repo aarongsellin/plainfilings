@@ -200,7 +200,9 @@ ul {
   backdrop-filter: blur(2px);
 }
 
-.modal-overlay[hidden] { display: none; }
+.modal-overlay[hidden] {
+  display: none;
+}
 
 .modal {
   background: var(--bg);
@@ -226,7 +228,9 @@ ul {
   line-height: 1;
   padding: 4px 8px;
 }
-.modal__close:hover { color: var(--black); }
+.modal__close:hover {
+  color: var(--black);
+}
 
 .modal__icon {
   margin-bottom: 16px;
@@ -268,7 +272,9 @@ ul {
   outline: none;
   transition: border-color 150ms;
 }
-.modal__input:focus { border-color: var(--blue); }
+.modal__input:focus {
+  border-color: var(--blue);
+}
 
 .modal__note {
   margin-top: 16px;
@@ -276,7 +282,9 @@ ul {
   font-weight: 600;
   color: var(--blue);
 }
-.modal__note[hidden] { display: none; }
+.modal__note[hidden] {
+  display: none;
+}
 
 /* --- DEMO SCREENSHOTS -----------------------------------------*/
 .hero__screenshot {
