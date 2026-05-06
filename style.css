@@ -187,6 +187,39 @@ ul {
   font-size: 16px;
 }
 
+/* --- DEMO SCREENSHOTS -----------------------------------------*/
+.hero__screenshot {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 56px rgba(28, 10, 15, 0.14);
+  display: block;
+}
+
+.screenshot-showcase {
+  background: var(--light);
+}
+
+.screenshot-showcase__sub {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.72;
+  max-width: none;
+  margin-bottom: 40px;
+}
+
+.screenshot-showcase__frame {
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 72px rgba(28, 10, 15, 0.13);
+}
+
+.screenshot-showcase__img {
+  width: 100%;
+  display: block;
+}
+
 /* --- PLACEHOLDER BOXES ----------------------------------------*/
 .placeholder-image {
   width: 100%;
@@ -628,7 +661,23 @@ ul {
   margin-left: 2px;
 }
 
+.badge-planned {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--mid-gray);
+  border-radius: 3px;
+  padding: 2px 7px;
+  vertical-align: middle;
+  margin-left: 6px;
+  line-height: 1.4;
+}
 
+.pricing-card__tier {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
