@@ -41,6 +41,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img {
@@ -357,24 +358,10 @@ ul {
 /* =============================================================
    NAV
    ============================================================= */
-/* --- CONSTRUCTION BANNER -------------------------------------*/
-.construction-banner {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: var(--black);
-  color: var(--white);
-  text-align: center;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 10px 16px;
-  border-bottom: 2px solid var(--red);
-}
 
 .nav {
   position: sticky;
-  top: 34px;
+  top: 0;
   z-index: 100;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -760,6 +747,13 @@ ul {
   align-items: stretch;
 }
 
+.pricing__grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .pricing-card {
   background: var(--white);
   border: 2px solid var(--border);
@@ -772,10 +766,8 @@ ul {
 
 .pricing-card--featured {
   border: 3px solid var(--blue);
-  margin-top: -20px;
-  margin-bottom: -20px;
-  padding-top: 52px;
-  padding-bottom: 52px;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .pricing-card__badge {
@@ -867,6 +859,11 @@ ul {
   font-size: 13px;
   margin-bottom: 28px;
   flex: 1;
+}
+
+.pricing-card--featured .pricing-card__features {
+  columns: 1;
+  column-count: 1;
 }
 
 .pricing-card__features li {
@@ -1099,6 +1096,132 @@ ul {
 }
 
 /* =============================================================
+   INTEGRATIONS
+   ============================================================= */
+.integrations .section-title {
+  margin-bottom: 20px;
+}
+
+.integrations__sub {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1.55;
+  max-width: 700px;
+  margin-bottom: 16px;
+}
+
+.integrations__body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.78;
+  max-width: 700px;
+  margin-bottom: 56px;
+}
+
+.integrations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.integration-card {
+  padding: 28px 24px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  transition:
+    border-color var(--trans),
+    border-left-color var(--trans);
+}
+
+.integration-card:hover {
+  border-color: var(--blue);
+  border-left-color: var(--blue);
+}
+
+.integration-card__icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  color: var(--blue);
+  margin-bottom: 18px;
+}
+
+.integration-card__icon svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.integration-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.integration-card__desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.alert-examples {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+
+.alert-examples__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.alert-examples__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.alert-examples__list li {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 5px 12px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.integrations__footer-copy {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.78;
+  max-width: 700px;
+  margin-bottom: 36px;
+}
+
+.integrations__ctas {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* =============================================================
    RESPONSIVE — TABLET (≤960px)
    ============================================================= */
 @media (max-width: 960px) {
@@ -1123,11 +1246,15 @@ ul {
   .features__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .integrations__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .testimonials__grid {
     grid-template-columns: 1fr;
   }
 
-  .pricing__grid {
+  .pricing__grid,
+  .pricing__grid--two {
     grid-template-columns: 1fr;
     max-width: 420px;
     margin-left: auto;
@@ -1193,6 +1320,19 @@ ul {
 
   .features__grid {
     grid-template-columns: 1fr;
+  }
+
+  .integrations__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alert-examples__list li {
+    white-space: normal;
+  }
+
+  .integrations__ctas {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .footer__inner {
