@@ -11,9 +11,7 @@ document
       var href = btn.getAttribute("href");
       if (href && NAV_ANCHORS.indexOf(href) !== -1) return; // let nav/scroll links through
       e.preventDefault();
-      modal.hidden = false;
-      document.body.style.overflow = "hidden";
-      modal.querySelector(".modal__input").focus();
+      window.location.href = "https://accounts.plainfilings.com";
     });
   });
 
