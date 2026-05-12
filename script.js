@@ -63,3 +63,39 @@ document.querySelectorAll(".faq-item__question").forEach(function (btn) {
     }
   });
 });
+
+// Pricing toggle (index2.html)
+var pricingToggle = document.querySelector(".pricing-toggle");
+if (pricingToggle) {
+  var pricing2Grid = document.getElementById("pricing2Grid");
+
+  function setPricingBilling(billing) {
+    pricingToggle
+      .querySelectorAll(".pricing-toggle__btn")
+      .forEach(function (btn) {
+        var active = btn.getAttribute("data-billing") === billing;
+        btn.classList.toggle("pricing-toggle__btn--active", active);
+        btn.setAttribute("aria-pressed", String(active));
+      });
+    if (pricing2Grid) {
+      pricing2Grid
+        .querySelectorAll("[data-price-annual]")
+        .forEach(function (el) {
+          el.hidden = billing !== "annual";
+        });
+      pricing2Grid
+        .querySelectorAll("[data-price-monthly]")
+        .forEach(function (el) {
+          el.hidden = billing !== "monthly";
+        });
+    }
+  }
+
+  pricingToggle
+    .querySelectorAll(".pricing-toggle__btn")
+    .forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        setPricingBilling(btn.getAttribute("data-billing"));
+      });
+    });
+}
