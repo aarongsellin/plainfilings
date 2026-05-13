@@ -747,6 +747,11 @@ ul {
   align-items: stretch;
 }
 
+.pricing-single {
+  display: flex;
+  justify-content: center;
+}
+
 .pricing__grid--two {
   grid-template-columns: repeat(2, 1fr);
   max-width: 800px;
@@ -758,6 +763,7 @@ ul {
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: var(--radius);
+  max-width: 360px;
   padding: 36px 28px;
   position: relative;
   display: flex;
