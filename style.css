@@ -740,34 +740,25 @@ ul {
 /* =============================================================
    7. PRICING
    ============================================================= */
-.pricing__grid {
+.pricing-single {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   align-items: stretch;
-}
-
-.pricing-single {
-  display: flex;
-  justify-content: center;
-}
-
-.pricing__grid--two {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  overflow: visible;
 }
 
 .pricing-card {
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: var(--radius);
-  max-width: 360px;
+  width: 100%;
+  height: 100%;
   padding: 36px 28px;
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: visible;
 }
 
 .pricing-card--featured {
@@ -776,52 +767,24 @@ ul {
   padding-bottom: 36px;
 }
 
-.pricing-card__badge {
+.pricing-card__trial-banner {
   display: inline-block;
-  align-self: flex-start;
-  background: var(--blue);
+  background: var(--red);
   color: var(--white);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 4px 12px;
   border-radius: 2px;
-  margin-bottom: 18px;
+  padding: 5px 10px;
 }
 
-.pricing-card__badge--soon {
-  background: var(--muted);
-}
-
-.pricing-card__badge--inline {
-  font-size: 9px;
-  padding: 2px 7px;
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-.coming-soon-label {
+.pricing-card__trial-banner--inline {
   font-size: 11px;
-  font-style: italic;
-  color: var(--muted);
-  margin-left: 2px;
-}
-
-.badge-planned {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  border: 1px solid var(--mid-gray);
-  border-radius: 3px;
-  padding: 2px 7px;
+  letter-spacing: 0.09em;
+  padding: 6px 12px;
+  margin-left: 72px;
   vertical-align: middle;
-  margin-left: 6px;
-  line-height: 1.4;
 }
 
 .pricing-card__tier {
@@ -847,29 +810,6 @@ ul {
   line-height: 1;
 }
 
-.pricing-card__amount--strike {
-  font-size: 28px;
-  color: var(--mid-gray);
-  text-decoration: line-through;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-right: 4px;
-  align-self: center;
-}
-
-.pricing-card__discount-banner {
-  display: inline-block;
-  background: var(--red);
-  color: var(--white);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 2px;
-  margin-bottom: 20px;
-}
-
 .pricing-card__per {
   font-size: 16px;
   color: var(--muted);
@@ -888,6 +828,7 @@ ul {
   font-size: 13px;
   margin-bottom: 28px;
   flex: 1;
+  overflow: visible;
 }
 
 .pricing-card--featured .pricing-card__features {
@@ -900,21 +841,8 @@ ul {
   align-items: center;
   gap: 10px;
   line-height: 1.5;
-}
-
-.pricing-card__features li.disabled {
-  color: var(--mid-gray);
-}
-
-.pricing-card__includes {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 2px;
+  position: relative;
+  overflow: visible;
 }
 
 .check {
@@ -923,73 +851,73 @@ ul {
   flex-shrink: 0;
 }
 
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  color: var(--muted);
+  cursor: help;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.info-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.info-icon:hover::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: 50%;
+  right: 125%;
+  transform: translateY(-50%);
+  width: 180px;
+  padding: 8px 10px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 11px;
+  line-height: 1.4;
+  border-radius: var(--radius);
+  white-space: normal;
+  z-index: 1000;
+  text-align: center;
+  pointer-events: none;
+  animation: tooltip-fade 150ms ease forwards;
+}
+
+.info-icon:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 118%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--black);
+  z-index: 1000;
+  animation: tooltip-fade 150ms ease forwards;
+}
+
+@keyframes tooltip-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .pricing__note {
   text-align: center;
   font-size: 13px;
   color: var(--muted);
   margin-top: 32px;
-}
-
-.pricing__note-link {
-  color: var(--blue);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* Tooltips */
-.tip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  position: relative;
-  color: var(--muted);
-  font-size: 13px;
-  cursor: default;
-  vertical-align: middle;
-  margin-left: 4px;
-  line-height: 1;
-}
-
-.tip::after {
-  content: attr(data-tip);
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--black);
-  color: #f0e8e0;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  padding: 8px 12px;
-  border-radius: 4px;
-  width: 220px;
-  white-space: normal;
-  text-align: left;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  z-index: 10;
-}
-
-.tip::before {
-  content: "";
-  position: absolute;
-  bottom: calc(100% + 3px);
-  left: 50%;
-  transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: var(--black);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  z-index: 10;
-}
-
-.tip:hover::after,
-.tip:hover::before {
-  opacity: 1;
 }
 
 /* =============================================================
@@ -1257,6 +1185,386 @@ ul {
 }
 
 /* =============================================================
+   DISCOVERY ROADMAP — Signal discovery
+   ============================================================= */
+
+.discovery-roadmap {
+  background: var(--light);
+  color: var(--black);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.discovery-roadmap__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.discovery-roadmap__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.7fr);
+  gap: 72px;
+  align-items: end;
+}
+
+.discovery-roadmap__headline {
+  margin: 0;
+  font-size: clamp(36px, 5.7vw, 68px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.discovery-roadmap__sub {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.76;
+}
+
+.discovery-roadmap__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 72px;
+  border-top: 2px solid var(--border);
+}
+
+.discovery-roadmap__track::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--blue);
+  transition: width 1400ms cubic-bezier(0.22, 1, 0.36, 1) 220ms;
+}
+
+.discovery-roadmap__track::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(122, 16, 48, 0.24),
+    rgba(184, 137, 42, 0.45),
+    transparent
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0.9;
+  transition: transform 1800ms cubic-bezier(0.22, 1, 0.36, 1) 360ms;
+}
+
+.discovery-roadmap__node {
+  position: relative;
+  padding: 38px 28px 0 0;
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--node-delay, 0ms);
+}
+
+.discovery-roadmap__node::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--light);
+  border: 2px solid var(--mid-gray);
+  border-radius: 50%;
+  transform: scale(0.55);
+  opacity: 0;
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 700ms ease;
+  transition-delay: calc(var(--node-delay, 0ms) + 180ms);
+}
+
+.discovery-roadmap__node--active::before {
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 6px var(--light);
+}
+
+.discovery-roadmap__marker {
+  margin-bottom: 28px;
+  color: var(--red);
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  opacity: 0;
+  transform: translateY(14px) scale(0.92);
+  transition:
+    opacity 800ms ease,
+    transform 950ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--node-delay, 0ms) + 140ms);
+}
+
+.discovery-roadmap__content {
+  max-width: 240px;
+}
+
+.discovery-roadmap__label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.discovery-roadmap__content h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.discovery-roadmap__content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+.discovery-roadmap__signal {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 36px;
+  margin-top: 64px;
+  padding: 28px 32px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 760ms;
+}
+
+.discovery-roadmap--visible .discovery-roadmap__track::before {
+  width: 25%;
+}
+
+.discovery-roadmap--visible .discovery-roadmap__track::after {
+  transform: scaleX(1);
+}
+
+.discovery-roadmap--visible .discovery-roadmap__node {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.discovery-roadmap--visible .discovery-roadmap__node::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.discovery-roadmap--visible .discovery-roadmap__marker {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.discovery-roadmap--visible .discovery-roadmap__signal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Global scroll-reveal utility */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  filter: blur(6px);
+  transition:
+    opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.scroll-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.discovery-roadmap__signal-meta span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.discovery-roadmap__signal-meta strong {
+  display: block;
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.discovery-roadmap__signal p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.78;
+}
+
+/* Optional: replace old signal-chain if both classes exist */
+.signal-chain {
+  background: var(--light);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .discovery-roadmap__header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .discovery-roadmap__sub {
+    max-width: 680px;
+  }
+
+  .discovery-roadmap__track {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 56px;
+    border-top: none;
+    border-left: 2px solid var(--border);
+  }
+
+  .discovery-roadmap__track::before {
+    top: 0;
+    left: -2px;
+    width: 2px;
+    height: 25%;
+  }
+
+  .discovery-roadmap__track::after {
+    top: 0;
+    left: -2px;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(122, 16, 48, 0.24),
+      rgba(184, 137, 42, 0.45),
+      transparent
+    );
+  }
+
+  .discovery-roadmap__node {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 24px;
+    padding: 0 0 36px 32px;
+  }
+
+  .discovery-roadmap__node::before {
+    top: 0;
+    left: -8px;
+  }
+
+  .discovery-roadmap__marker {
+    margin-bottom: 0;
+    font-size: 56px;
+  }
+
+  .discovery-roadmap__content {
+    max-width: 520px;
+  }
+
+  .discovery-roadmap__signal {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .discovery-roadmap--visible .discovery-roadmap__track::before {
+    height: 25%;
+    width: 2px;
+  }
+
+  .discovery-roadmap--visible .discovery-roadmap__track::after {
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .discovery-roadmap__headline {
+    font-size: clamp(34px, 11vw, 48px);
+  }
+
+  .discovery-roadmap__track {
+    margin-top: 44px;
+  }
+
+  .discovery-roadmap__node {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0 0 34px 28px;
+  }
+
+  .discovery-roadmap__marker {
+    font-size: 48px;
+  }
+
+  .discovery-roadmap__signal {
+    padding: 22px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade,
+  .discovery-roadmap__node,
+  .discovery-roadmap__node::before,
+  .discovery-roadmap__marker,
+  .discovery-roadmap__signal,
+  .discovery-roadmap__track::before,
+  .discovery-roadmap__track::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .discovery-roadmap__track::before {
+    width: 25%;
+  }
+
+  .discovery-roadmap__track::after {
+    display: none;
+  }
+}
+
+/* =============================================================
    RESPONSIVE — TABLET (≤960px)
    ============================================================= */
 @media (max-width: 960px) {
@@ -1288,8 +1596,7 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .pricing__grid,
-  .pricing__grid--two {
+  .pricing-single {
     grid-template-columns: 1fr;
     max-width: 420px;
     margin-left: auto;
@@ -1465,9 +1772,9 @@ ul {
 
 .video-card__label {
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 500;
-  color: var(--muted);
+  /* color: var(--muted); */
   text-align: center;
 }
 
@@ -1478,6 +1785,16 @@ ul {
   display: flex;
   justify-content: center;
   margin-bottom: 48px;
+}
+
+.pricing-beta-headline {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 34px;
+  color: var(--black);
 }
 
 .pricing-toggle {
@@ -1558,5 +1875,10 @@ ul {
 
   .pricing-toggle__btn {
     padding: 9px 14px;
+  }
+
+  .pricing-beta-headline {
+    font-size: 22px;
+    margin-bottom: 26px;
   }
 }

@@ -99,3 +99,61 @@ if (pricingToggle) {
       });
     });
 }
+
+// Scroll animations
+setupScrollAnimations();
+
+function setupScrollAnimations() {
+  var roadmap = document.querySelector(".discovery-roadmap");
+  var revealTargets = document.querySelectorAll(
+    ".video-card, .pricing-card, .feature-card, .faq-item, .final-cta__inner",
+  );
+
+  revealTargets.forEach(function (el, idx) {
+    el.classList.add("scroll-fade");
+    el.style.setProperty("--reveal-delay", (idx % 4) * 90 + "ms");
+  });
+
+  var roadmapNodes = document.querySelectorAll(".discovery-roadmap__node");
+  roadmapNodes.forEach(function (node, idx) {
+    node.style.setProperty("--node-delay", idx * 140 + "ms");
+  });
+
+  if (!window.IntersectionObserver) {
+    revealTargets.forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+    if (roadmap) roadmap.classList.add("discovery-roadmap--visible");
+    return;
+  }
+
+  var revealObserver = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+  );
+
+  revealTargets.forEach(function (el) {
+    revealObserver.observe(el);
+  });
+
+  if (roadmap) {
+    var roadmapObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          roadmap.classList.add("discovery-roadmap--visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
+    );
+
+    roadmapObserver.observe(roadmap);
+  }
+}
