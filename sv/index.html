@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plainfilings: Stock Filings, Decoded</title>
+    <title>plainfilings: Nordisk börsinsyn</title>
     <meta
       name="description"
-      content="plainfilings reads any stock filing — annual reports, quarterly filings, 8-Ks and more — and gives you a clear, actionable summary in seconds. Covering US and Nordic markets."
+      content="plainfilings läser alla typer av börsrapporter — årsredovisningar, kvartalsrapporter, 8-K:er och mer — och ger dig en tydlig, handlingsbar sammanfattning på sekunder. Vi täcker hela Norden."
     />
     <link rel="canonical" href="https://plainfilings.com/sv/" />
 
@@ -16,7 +16,7 @@
     <meta property="og:title" content="plainfilings: Stock Filings, Decoded" />
     <meta
       property="og:description"
-      content="plainfilings reads any stock filing and gives you a clear, actionable summary in seconds. Covering US and Nordic markets."
+      content="plainfilings läser alla typer av börsrapporter och ger dig en tydlig, handlingsbar sammanfattning på sekunder. Vi täcker USA och Norden."
     />
     <meta
       property="og:image"
@@ -28,7 +28,7 @@
     <meta name="twitter:title" content="plainfilings: Stock Filings, Decoded" />
     <meta
       name="twitter:description"
-      content="plainfilings reads any stock filing and gives you a clear, actionable summary in seconds. Covering US and Nordic markets."
+      content="plainfilings läser alla typer av börsrapporter och ger dig en tydlig, handlingsbar sammanfattning på sekunder. Vi täcker USA och Norden."
     />
     <meta
       name="twitter:image"
@@ -40,32 +40,122 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="../favicon-96x96.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 
     <!-- Apple -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
 
     <!-- Web app manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="../site.webmanifest" />
   </head>
   <body>
+    <section class="exchanges-banner" aria-label="Täckta börser">
+      <div class="container exchanges-banner__inner">
+        <span class="exchanges-banner__label">Tillgängliga marknader</span>
+        <div class="exchanges-banner__list">
+          <div class="exchange-chip">
+            <svg
+              class="exchange-chip__flag"
+              viewBox="0 0 20 14"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect width="20" height="14" fill="#006AA7" />
+              <rect x="6" y="0" width="3" height="14" fill="#FECC02" />
+              <rect x="0" y="5.5" width="20" height="3" fill="#FECC02" />
+            </svg>
+            <span>Nasdaq Stockholm</span>
+          </div>
+
+          <div class="exchange-chip">
+            <svg
+              class="exchange-chip__flag"
+              viewBox="0 0 20 14"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect width="20" height="14" fill="#C60C30" />
+              <rect x="6" y="0" width="2.5" height="14" fill="white" />
+              <rect x="0" y="5.75" width="20" height="2.5" fill="white" />
+            </svg>
+            <span>Nasdaq Köpenhamn</span>
+          </div>
+
+          <div class="exchange-chip">
+            <svg
+              class="exchange-chip__flag"
+              viewBox="0 0 20 14"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect width="20" height="14" fill="white" />
+              <rect x="5" y="0" width="3" height="14" fill="#003580" />
+              <rect x="0" y="5.5" width="20" height="3" fill="#003580" />
+            </svg>
+            <span>Nasdaq Helsingfors</span>
+          </div>
+
+          <div class="exchange-chip">
+            <svg
+              class="exchange-chip__flag"
+              viewBox="0 0 20 14"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect width="20" height="14" fill="#003897" />
+              <rect x="5.5" y="0" width="3" height="14" fill="white" />
+              <rect x="0" y="5.5" width="20" height="3" fill="white" />
+              <rect x="6.25" y="0" width="1.5" height="14" fill="#DC1E35" />
+              <rect x="0" y="6.25" width="20" height="1.5" fill="#DC1E35" />
+            </svg>
+            <span>Nasdaq Island</span>
+          </div>
+
+          <div class="exchange-chip">
+            <svg
+              class="exchange-chip__flag"
+              viewBox="0 0 20 14"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect width="20" height="14" fill="#EF2B2D" />
+              <rect x="5.5" y="0" width="3" height="14" fill="white" />
+              <rect x="0" y="5.5" width="20" height="3" fill="white" />
+              <rect x="6.25" y="0" width="1.5" height="14" fill="#002868" />
+              <rect x="0" y="6.25" width="20" height="1.5" fill="#002868" />
+            </svg>
+            <span>Oslo Børs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <nav class="nav">
       <div class="container nav__inner">
         <a href="#" class="nav__logo">
-          <img src="/logo.png" alt="" class="nav__logo-img" />plainfilings
+          <img src="../logo.png" alt="" class="nav__logo-img" />plainfilings
         </a>
         <div class="nav__links">
-          <a href="#pricing">Pricing</a>
-          <a href="#features">Features</a>
+          <!-- <a href="#pricing">Priser</a> -->
+          <!-- <a href="#features">Funktioner</a> -->
           <a href="#faq">FAQ</a>
           <a
             href="https://dashboard.plainfilings.com"
             class="btn btn--primary btn--sm"
-            >Get started</a
+            >Väntlista</a
           >
         </div>
       </div>
@@ -75,34 +165,31 @@
       <div class="container hero2__inner">
         <div class="hero2__content">
           <h1 class="hero2__headline">
-            Market moves have<br />
-            SWEEEEEDEEEN paper trails, <u>we follow it.</u>
+            Börsrörelser lämnar<br />
+            spår, <u>vi följer dem.</u>
           </h1>
 
           <p class="hero2__sub">
-            Get live access to market-moving company disclosures from official
-            sources across the companies and markets you follow. No spin, no
-            delay, no analyst filter. Just the source, summarized and routed to
-            you when it matters.<br /><br />
-            We are currently in a <u><b>limited beta</b></u> with a small user
-            group, but <b>you</b> can join the waitlist today.
+            Marknaden reagerar på information du ännu inte sett. Plainfilings
+            hittar avgörande kontext, <br />analyserar mönster och levererar
+            insikter innan kursen springer från dig.
           </p>
 
           <div class="hero2__ctas">
-            <a
+            <!-- <a
               href="https://dashboard.plainfilings.com"
               class="btn btn--primary btn--lg"
-              >Get started
-            </a>
+              >Kom igång
+            </a> -->
           </div>
         </div>
       </div>
     </section>
 
-    <section class="video-section section section--light">
+    <!-- <section class="video-section section section--light">
       <div class="container">
-        <div class="section-tag">See it in action</div>
-        <h2 class="section-title">Three minutes. That&rsquo;s all it takes.</h2>
+        <div class="section-tag">Se det i praktiken</div>
+        <h2 class="section-title">Tre minuter. Det är allt som krävs.</h2>
         <div class="video-grid">
           <div class="video-card">
             <div class="video-card__thumb">
@@ -116,7 +203,7 @@
                 </svg>
               </div>
             </div>
-            <div class="video-card__label">Quick Rundown</div>
+            <div class="video-card__label">Snabb genomgång</div>
           </div>
 
           <div class="video-card">
@@ -150,21 +237,21 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="discovery-roadmap section">
       <div class="container discovery-roadmap__inner">
-        <div class="section-tag">Signal Context</div>
+        <div class="section-tag">Signal-Context</div>
 
         <div class="discovery-roadmap__header">
           <h2 class="discovery-roadmap__headline">
-            The Blueprint for what comes <u>next</u>
+            Ritningen för det som kommer <u>härnäst</u>
           </h2>
 
           <p class="discovery-roadmap__sub">
-            Plainfilings follows the trail inside every company disclosure: what
-            changed, why it may matter, what similar events have led to before,
-            and what deserves your attention next.
+            Varje rapport lämnar ett spår av förändring. Signal-Context ser vad
+            som ändrats, grupperar detta och framför varför det har beteydelse.
+            Det konverterar råa bolags dokument till forskning man kan agera på.
           </p>
         </div>
 
@@ -174,12 +261,12 @@
           >
             <div class="discovery-roadmap__marker">01</div>
             <div class="discovery-roadmap__content">
-              <span class="discovery-roadmap__label">Detect</span>
-              <h3>Find the change</h3>
+              <span class="discovery-roadmap__label">Upptäck</span>
+              <h3>Hitta förändringen</h3>
               <p>
-                New wording, removed language, amended risks, guidance changes,
-                financing clues, insider activity, and material event
-                disclosures.
+                Ny formulering, borttaget språk, ändrade risker,
+                guidningsförändringar, finansieringsledtrådar, insideraktivitet
+                och väsentliga händelserapporter.
               </p>
             </div>
           </article>
@@ -187,11 +274,11 @@
           <article class="discovery-roadmap__node">
             <div class="discovery-roadmap__marker">02</div>
             <div class="discovery-roadmap__content">
-              <span class="discovery-roadmap__label">Classify</span>
-              <h3>Separate signal, from noise</h3>
+              <span class="discovery-roadmap__label">Klassificera</span>
+              <h3>Separera signal från brus</h3>
               <p>
-                Each disclosure is mapped by event type, severity, novelty, and
-                relevance — with source text attached for verification.
+                Varje rapport märks upp efter händelsetyp, allvar, nyhetsvärde
+                och relevans — med källtext bifogad för kontroll.
               </p>
             </div>
           </article>
@@ -199,11 +286,11 @@
           <article class="discovery-roadmap__node">
             <div class="discovery-roadmap__marker">03</div>
             <div class="discovery-roadmap__content">
-              <span class="discovery-roadmap__label">Compare</span>
-              <h3>Look for precedent</h3>
+              <span class="discovery-roadmap__label">Jämför</span>
+              <h3>Let efter prejudikat</h3>
               <p>
-                Similar historical disclosures are surfaced to show common
-                follow-on risks, sector patterns, and market reactions.
+                Liknande historiska rapporter lyfts fram för att visa vanliga
+                följdscenarier, sektormönster och marknadsreaktioner.
               </p>
             </div>
           </article>
@@ -211,12 +298,12 @@
           <article class="discovery-roadmap__node">
             <div class="discovery-roadmap__marker">04</div>
             <div class="discovery-roadmap__content">
-              <span class="discovery-roadmap__label">Act</span>
-              <h3>Route the next move</h3>
+              <span class="discovery-roadmap__label">Agera</span>
+              <h3>Välj nästa steg</h3>
               <p>
-                Flag for research, monitor confirmation events, compare peers,
-                review liquidity, check insiders, or send the signal to your
-                stack.
+                Flagga för analys, bevaka bekräftande händelser, jämför peers,
+                granska likviditet, kontrollera insiders eller skicka signalen
+                vidare till din stack.
               </p>
             </div>
           </article>
@@ -224,17 +311,17 @@
 
         <div class="discovery-roadmap__signal">
           <div class="discovery-roadmap__signal-meta">
-            <span>Example signal</span>
-            <strong>Liquidity language changed</strong>
+            <span>Exempelsignal</span>
+            <strong>Likviditetsspråket ändrades</strong>
           </div>
 
           <p>
-            &quot;Sufficient for the next twelve months&quot; becomes &quot;may
-            seek additional financing&quot;, coupled with insider sells.
-            Plainfilings highlights the changed language, and classifies the
-            events, links the source text, and suggests the next checks:
-            dilution risk, debt covenants, insider activity, and peer financing
-            patterns.
+            &quot;Tillräckligt för de kommande tolv månaderna&quot; blir
+            &quot;kan behöva söka ytterligare finansiering&quot;, i kombination
+            med insiderförsäljningar. plainfilings markerar den ändrade
+            formuleringen, klassificerar händelserna, länkar källtexten och
+            föreslår nästa kontroller: utspädningsrisk, lånevillkor,
+            insideraktivitet och finansieringsmönster hos liknande bolag.
           </p>
         </div>
       </div>
@@ -296,44 +383,48 @@
         </div>
       </div>
     </section> -->
-
+    <!-- 
     <section id="pricing" class="pricing section section--light">
       <div class="container">
-        <div class="section-tag">Pricing</div>
-        <h2 class="section-title">Simple, transparent pricing.</h2>
+        <div class="section-tag">Priser</div>
+        <h2 class="section-title">Enkla, transparenta priser.</h2>
 
         <div class="pricing-toggle-wrap">
-          <div class="pricing-toggle" role="group" aria-label="Billing period">
+          <div
+            class="pricing-toggle"
+            role="group"
+            aria-label="Faktureringsperiod"
+          >
             <button
               class="pricing-toggle__btn pricing-toggle__btn--active"
               data-billing="annual"
               aria-pressed="true"
             >
-              Annual <span class="pricing-toggle__save">Save 30%</span>
+              Årsvis <span class="pricing-toggle__save">Spara 30%</span>
             </button>
             <button
               class="pricing-toggle__btn"
               data-billing="monthly"
               aria-pressed="false"
             >
-              Monthly
+              Månadsvis
             </button>
           </div>
         </div>
 
         <h3 class="pricing-beta-headline">
-          We are not accepting signups right now. <br />
-          But the <u>waitlist is open.</u>
+          Vi tar inte emot registreringar just nu. <br />
+          Men <u>väntelistan är öppen.</u>
         </h3>
 
         <div class="pricing-single" id="pricing2Grid">
-          <!-- Pro -->
+
           <div class="pricing-card pricing-card--featured">
             <div class="pricing-card__tier">
               Pro
               <span
                 class="pricing-card__trial-banner pricing-card__trial-banner--inline"
-                >First month free</span
+                >Första månaden gratis</span
               >
             </div>
 
@@ -343,7 +434,7 @@
                 <span class="pricing-card__per">/mo</span>
               </div>
               <div class="pricing-card__billing">
-                billed $108/yr &middot; cancel anytime
+                faktureras 108 USD/år &middot; säg upp när som helst
               </div>
             </div>
             <div class="pricing-price" data-price-monthly hidden>
@@ -352,30 +443,34 @@
                 <span class="pricing-card__per">/mo</span>
               </div>
               <div class="pricing-card__billing">
-                billed monthly &middot; cancel anytime
+                faktureras månadsvis &middot; säg upp när som helst
               </div>
             </div>
 
-            <p class="pricing-card__pitch">The signal, to your doorstep</p>
+            <p class="pricing-card__pitch">Signalen, direkt till dig</p>
 
             <ul class="pricing-card__features">
               <li>
-                <span class="check">&#10003;</span> All supported filing types
-                &amp; covered markets
+                <span class="check">&#10003;</span> Alla stödda rapporttyper
+                &amp; täckta marknader
               </li>
-              <li><span class="check">&#10003;</span> Unlimited watchlists</li>
-              <li><span class="check">&#10003;</span> Live filings feed</li>
-              <li><span class="check">&#10003;</span> E-mail alerts</li>
+              <li>
+                <span class="check">&#10003;</span> Obegränsade bevakningslistor
+              </li>
+              <li>
+                <span class="check">&#10003;</span> Liveflöde för rapporter
+              </li>
+              <li><span class="check">&#10003;</span> E-postnotiser</li>
               <li>
                 <span class="check">&#10003;</span>
                 <span
-                  ><b><u>Limited</u></b> Signal-Context and <br />Event-Chart
-                  access.</span
+                  ><b><u>Begränsad</u></b> Signal-kontext- och
+                  <br />Händelsegraf- åtkomst.</span
                 >
                 <span
                   class="info-icon"
-                  aria-label="Limited to 5 companies per month. Upgrade to Max for unlimited access."
-                  title="Limited to 5 companies per month. Upgrade to Max for unlimited access."
+                  aria-label="Begränsat till 5 bolag per månad. Uppgradera till Max för obegränsad åtkomst."
+                  title="Begränsat till 5 bolag per månad. Uppgradera till Max för obegränsad åtkomst."
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -394,11 +489,11 @@
             <a
               href="https://dashboard.plainfilings.com"
               class="btn btn--primary btn--full"
-              >Start free</a
+              >Starta gratis</a
             >
           </div>
 
-          <!-- MAX -->
+
           <div class="pricing-card">
             <div class="pricing-card__tier">Max</div>
 
@@ -408,7 +503,7 @@
                 <span class="pricing-card__per">/mo</span>
               </div>
               <div class="pricing-card__billing">
-                billed $468/yr &middot; cancel anytime
+                faktureras 468 USD/år &middot; säg upp när som helst
               </div>
             </div>
             <div class="pricing-price" data-price-monthly hidden>
@@ -417,37 +512,35 @@
                 <span class="pricing-card__per">/mo</span>
               </div>
               <div class="pricing-card__billing">
-                billed monthly &middot; cancel anytime
+                faktureras månadsvis &middot; säg upp när som helst
               </div>
             </div>
 
             <p class="pricing-card__pitch">
-              Everything you need to stay ahead.
+              Allt du behöver för att ligga före.
             </p>
 
             <ul class="pricing-card__features">
-              <li><span class="check">&#10003;</span> Everything in Pro</li>
-              <li><span class="check">&#10003;</span> SMS alerts</li>
+              <li><span class="check">&#10003;</span> Allt i Pro</li>
+              <li><span class="check">&#10003;</span> SMS-notiser</li>
               <li>
-                <span class="check">&#10003;</span> Unlimited access to
-                Signal-Context
+                <span class="check">&#10003;</span> Obegränsad åtkomst till
+                Signal-kontext
               </li>
               <li>
-                <span class="check">&#10003;</span> Unlimited access to
-                Event-Chart
+                <span class="check">&#10003;</span> Obegränsad åtkomst till
+                Händelsegraf
               </li>
 
-              <li><span class="check">&#10003;</span> PDF & CSV exports</li>
+              <li><span class="check">&#10003;</span> Export till PDF & CSV</li>
+              <li><span class="check">&#10003;</span> 2 års historik</li>
               <li>
-                <span class="check">&#10003;</span> 2 year historical lookback
-              </li>
-              <li>
-                <span class="check">&#10003;</span> TradingView & Social
-                integrations
+                <span class="check">&#10003;</span> Integrationer med
+                TradingView & sociala medier
                 <span
                   class="info-icon"
-                  aria-label="Push filing signals to TradingView or your Discord server via our bot. More integrations coming."
-                  title="Push filing signals to TradingView or your Discord server via our bot. More integrations coming."
+                  aria-label="Skicka rapportsignaler till TradingView eller din Discord-server via vår bot. Fler integrationer kommer."
+                  title="Skicka rapportsignaler till TradingView eller din Discord-server via vår bot. Fler integrationer kommer."
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -466,13 +559,13 @@
             <a
               href="https://dashboard.plainfilings.com"
               class="btn btn--primary btn--full"
-              >Get started
+              >Kom igång
             </a>
           </div>
 
-          <!-- Platform -->
+
           <div class="pricing-card">
-            <div class="pricing-card__tier">Platform</div>
+            <div class="pricing-card__tier">Plattform</div>
 
             <div class="pricing-price" data-price-annual>
               <div class="pricing-card__price">
@@ -480,7 +573,7 @@
                 <span class="pricing-card__per">/mo</span>
               </div>
               <div class="pricing-card__billing">
-                billed $2148/yr &middot; cancel anytime
+                faktureras 2148 USD/år &middot; säg upp när som helst
               </div>
             </div>
             <div class="pricing-price" data-price-monthly hidden>
@@ -489,45 +582,44 @@
                 <span class="pricing-card__per">/mo</span>
               </div>
               <div class="pricing-card__billing">
-                billed monthly &middot; cancel anytime
+                faktureras månadsvis &middot; säg upp när som helst
               </div>
             </div>
 
-            <p class="pricing-card__pitch">For developers & internal tools</p>
+            <p class="pricing-card__pitch">
+              För utvecklare och interna verktyg
+            </p>
 
             <ul class="pricing-card__features">
-              <li><span class="check">&#10003;</span> Everything in Max</li>
+              <li><span class="check">&#10003;</span> Allt i Max</li>
               <li>
                 <span class="check">&#10003;</span> REST API &middot; Webhooks
                 &middot; WebSocket
               </li>
+              <li><span class="check">&#10003;</span> 5 års historik</li>
               <li>
-                <span class="check">&#10003;</span> 5 year historical lookback
+                <span class="check">&#10003;</span> Massåtkomst till historik
               </li>
-              <li>
-                <span class="check">&#10003;</span> Bulk historical access
-              </li>
-              <!-- <li><span class="check">&#10003;</span> Custom alert routing</li> -->
-              <li><span class="check">&#10003;</span> Dedicated support</li>
+              <li><span class="check">&#10003;</span> Dedikerad support</li>
             </ul>
             <a
               href="https://dashboard.plainfilings.com"
               class="btn btn--primary btn--full"
-              >Get building
+              >Kom igång
             </a>
           </div>
         </div>
         <p class="pricing__note">
-          Cancel anytime. &nbsp;&middot;&nbsp; Team &amp; organisation accounts
-          supported.
+          Säg upp när som helst. &nbsp;&middot;&nbsp; Team- och
+          organisationskonton stöds.
         </p>
       </div>
     </section>
-
+     -->
     <section id="features" class="features section">
       <div class="container">
-        <div class="section-tag">Features</div>
-        <h2 class="section-title">What you get.</h2>
+        <div class="section-tag">Funktioner</div>
+        <h2 class="section-title">Det här får du.</h2>
         <div class="features__grid">
           <div class="feature-card">
             <div class="feature-card__icon">
@@ -545,13 +637,11 @@
                 />
               </svg>
             </div>
-            <h3 class="feature-card__title">
-              Never miss a material disclosure
-            </h3>
+            <h3 class="feature-card__title">Arkivanalys</h3>
             <p class="feature-card__desc">
-              Key risks, revenue changes and material events are pulled out and
-              listed clearly. Get notified by e-mail or SMS the moment a new
-              filing drops.
+              Nyckelrisker, intäktsförändringar och väsentliga händelser plockas
+              ut och listas tydligt. Tusentals inlagor genomsöks i realtid för
+              att hitta avgörande mönster.
             </p>
           </div>
 
@@ -571,10 +661,12 @@
                 />
               </svg>
             </div>
-            <h3 class="feature-card__title">Track the filings that matter</h3>
+            <h3 class="feature-card__title">
+              Följ de rapporter som spelar roll
+            </h3>
             <p class="feature-card__desc">
-              Unlimited watchlists let you monitor every ticker you follow. New
-              filing drops? You&rsquo;ll know before the crowd.
+              Obegränsade bevakningslistor låter dig följa varje aktie som
+              spelar roll för dig. Få notifikationer via e-mail eller sms
             </p>
           </div>
 
@@ -594,161 +686,159 @@
                 />
               </svg>
             </div>
-            <h3 class="feature-card__title">Sub-second ingestion</h3>
+            <h3 class="feature-card__title">Inläsning på under en sekund</h3>
             <p class="feature-card__desc">
-              When a disclosure is published in one of our covered regions, it
-              is typically ingested into our database in under a second. From
-              there, summaries, alerts, comparisons, and integrations are
-              triggered automatically.
+              När en rapport publiceras i en av våra täckta regioner tas den
+              vanligtvis in i vår databas på under en sekund. Därifrån triggas
+              sammanfattningar, notiser, jämförelser och integrationer
+              automatiskt.
             </p>
           </div>
         </div>
       </div>
     </section>
-
+    <!--
     <section id="faq" class="faq section">
       <div class="container faq__inner">
-        <div class="section-tag">FAQ</div>
-        <h2 class="section-title">Questions.</h2>
+        <div class="section-tag">Vanliga frågor</div>
+        <h2 class="section-title">Frågor.</h2>
         <div class="faq__list">
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              How accurate are the summaries?
+              Hur träffsäkra är sammanfattningarna?
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                Our model is trained on filings from multiple markets. Summaries
-                pull out key risks, revenue figures, guidance and material
-                events. Every point links back to the source text so you can
-                check it in one click.
+                Vår modell är tränad på rapporter från flera marknader.
+                Sammanfattningarna lyfter fram nyckelrisker, intäktsdata,
+                guidning och väsentliga händelser. Varje punkt länkar tillbaka
+                till källtexten så att du kan kontrollera den med ett klick.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              You&apos;re just an AI wrapper!
+              Ni är bara ett AI-omslag!
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                Plainfilings is NLP-first. Before any LLM is involved, our
-                platform uses a purpose-built search system to extract key
-                facts, detect changes, identify relevant language, and surface
-                sentiment across disclosures. Its only after that, to summarize
-                findings and explain complex language, that an LLM gets to do
-                anything of relevance. In short; the core signal engine is not a
-                chatbot. The LLM helps translate signals into something short
-                and digestable.
+                plainfilings är NLP-först. Innan någon LLM används analyserar
+                vår plattform rapporterna med ett specialbyggt söksystem för att
+                extrahera nyckelfakta, upptäcka förändringar, identifiera
+                relevant språk och lyfta fram sentiment i rapporterna. Först
+                därefter används en LLM för att sammanfatta resultaten och
+                förklara komplexa formuleringar. Kort sagt: vår kärna är inte en
+                chatbot. LLM:en hjälper bara till att översätta signaler till
+                något kort och lätt att ta in.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              What filing types do you support?
+              Vilka rapporttyper stöder ni?
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                We support all major filing types across our covered markets:
-                annual reports, quarterly filings, material event disclosures,
-                IPO prospectuses, proxy statements and more.
+                Vi stöder alla större rapporttyper på våra täckta marknader:
+                årsredovisningar, kvartalsrapporter, rapporter om väsentliga
+                händelser, prospekt, bolagsstämmoprotokoll och mer.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              Is $10/mo worth it if I can read filings myself?
+              Är 10 USD/mån värt det om jag kan läsa rapporterna själv?
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                A single 10-K averages 80,000 words, around 6 hours of reading
-                at a normal pace. Spread $10 across 10 filings a month and
-                you&rsquo;re paying less than $1 per hour of reading saved. Most
-                users cover far more than ten.
+                En enda 10-K ligger i snitt på 80 000 ord, ungefär 6 timmars
+                läsning i normalt tempo. Sprid 10 USD över 10 rapporter i
+                månaden och du betalar mindre än 1 USD per sparad lästimme. De
+                flesta användare följer betydligt fler än tio.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              Can I cancel my subscription anytime?
+              Kan jag säga upp abonnemanget när som helst?
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                Yes. Cancel with one click from your account settings. You keep
-                access until the end of your current billing period. No
-                contracts, no cancellation fees.
+                Ja. Säg upp med ett klick i kontoinställningarna. Du behåller
+                åtkomsten till slutet av din nuvarande faktureringsperiod. Inga
+                bindningstider, inga uppsägningsavgifter.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              What markets do you cover?
+              Vilka marknader täcker ni?
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                We currently cover companies listed on <b>NYSE</b>,
-                <b>Nasdaq</b> and <b>Nasdaq Stockholm</b> with many more to come
-                as we go.
+                Vi täcker i dag bolag noterade på <b>NYSE</b>, <b>Nasdaq</b> och
+                <b>Nasdaq Stockholm</b>, med många fler marknader på väg.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              Do you offer team or bulk discounts?
+              Erbjuder ni team- eller volymrabatter?
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                Yes. If your whole team wants to get on board and be billed from
-                a single account, we&rsquo;ll work out a discounted rate. Get in
-                touch with how many seats you need and we&rsquo;ll put something
-                together.
+                Ja. Om hela teamet vill använda tjänsten och faktureras från ett
+                enda konto tar vi fram ett rabatterat upplägg. Hör av dig med
+                hur många platser du behöver så löser vi något.
               </p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
-              Is the Platform plan for commercial use?
+              Är Plattform-planen för kommersiell användning?
               <span class="faq-item__toggle" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__answer" hidden>
               <p>
-                The platform plan is intended for personal, and internal use
-                cases. Individual traders, quant workflows and in-house tooling.
-                It is not licensed for commercial redistribution or data resale.
-                If you need a commerical arrangement or a custom SLA, get in
-                touch!
+                Plattform-planen är avsedd för personligt bruk och intern
+                användning. Enskilda traders, quant-flöden och interna verktyg.
+                Den är inte licensierad för kommersiell vidareförsäljning eller
+                datarendering. Om du behöver ett kommersiellt upplägg eller ett
+                anpassat SLA, hör av dig!
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="final-cta section section--dark">
+    <!-- <section class="final-cta section section--dark">
       <div class="container final-cta__inner">
         <h2 class="final-cta__headline">
-          Ready to stop missing the
-          <span class="text-red">move?</span>
+          Redo att sluta missa
+          <span class="text-red">rörelsen?</span>
         </h2>
         <a
           href="https://dashboard.plainfilings.com"
           class="btn btn--cta btn--lg"
-          >Get started
+          >Kom igång
         </a>
       </div>
-    </section>
+    </section> -->
 
     <footer class="footer">
       <div class="container footer__inner">
@@ -762,7 +852,7 @@
         </nav>
         <div class="footer__copy">
           &copy; 2026 plainfilings. All rights reserved. &nbsp;&middot;&nbsp;
-          Made in Sweden &nbsp;&middot;&nbsp;
+          Tillverkad i Sverige &nbsp;&middot;&nbsp;
           <a
             href="https://www.aarongsellin.dev"
             target="_blank"
@@ -802,17 +892,15 @@
             />
           </svg>
         </div>
-        <h2 class="modal__title" id="modalTitle">
-          We&rsquo;re getting everything ready.
-        </h2>
+        <h2 class="modal__title" id="modalTitle">Vi gör allt klart.</h2>
         <p class="modal__body">
-          plainfilings is currently in a limited beta for a small group of
-          users. Join the waitlist below and we&rsquo;ll let you know as soon as
-          more spots open.
+          plainfilings är just nu i en begränsad beta för en liten grupp
+          användare. Gå med i väntelistan nedan så hör vi av oss så fort fler
+          platser öppnas.
         </p>
       </div>
     </div>
 
-    <script src="/script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>

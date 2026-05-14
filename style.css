@@ -361,7 +361,7 @@ ul {
 
 .nav {
   position: sticky;
-  top: 0;
+  top: 43px;
   z-index: 100;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -1720,6 +1720,59 @@ ul {
   gap: 16px;
 }
 
+/* --- EXCHANGES BANNER -----------------------------------------*/
+.exchanges-banner {
+  position: sticky;
+  top: 0;
+  z-index: 101;
+  background: var(--black);
+  padding: 14px 0;
+}
+
+.exchanges-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.exchanges-banner__label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--mid-gray);
+  white-space: nowrap;
+  padding-right: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.exchanges-banner__list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.exchange-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.01em;
+}
+
+.exchange-chip__flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
 /* =============================================================
    INDEX 2 — VIDEO SECTION
    ============================================================= */
@@ -1871,6 +1924,23 @@ ul {
 
   .hero2__ctas {
     justify-content: flex-start;
+  }
+
+  .exchanges-banner__inner {
+    gap: 12px;
+  }
+
+  .exchanges-banner__label {
+    font-size: 9px;
+    padding-right: 12px;
+  }
+
+  .exchanges-banner__list {
+    gap: 16px;
+  }
+
+  .exchange-chip {
+    font-size: 11px;
   }
 
   .pricing-toggle__btn {
